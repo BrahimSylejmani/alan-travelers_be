@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/flight-booking/pom.xml" />
         <option value="$PROJECT_DIR$/flight-booking/flight-booking/pom.xml" />
+        <option value="$PROJECT_DIR$/hotel-booking/hotel-booking/pom.xml" />
+        <option value="$PROJECT_DIR$/car-booking/car-booking/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
