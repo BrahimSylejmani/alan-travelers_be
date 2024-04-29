@@ -19,10 +19,10 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @PostMapping("/{userId}")
+    @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public TicketResponseDTO createTicket(@PathVariable Long userId, @Valid @RequestBody TicketRequestDTO ticketRequestDTO) {
-        return ticketService.createTicket(userId, ticketRequestDTO);
+    public TicketResponseDTO createTicket(@RequestBody TicketRequestDTO ticketRequestDTO) {
+        return ticketService.createTicket(ticketRequestDTO);
     }
 
     @GetMapping

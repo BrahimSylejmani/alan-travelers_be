@@ -1,7 +1,7 @@
 package org.alan.flightbooking.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +27,7 @@ public class Ticket {
     private String ticketClass;
     private BigDecimal ticketPrice;
     private String ticketStatus;
-    private LocalDateTime bookingDate;
+    private LocalDate bookingDate;
     private String passengerEmail;
     private String passengerPhoneNumber;
     private String paymentStatus;

@@ -43,13 +43,8 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketResponseDTO createTicket(Long userId, TicketRequestDTO ticketRequestDTO) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + userId));
-
+    public TicketResponseDTO createTicket(TicketRequestDTO ticketRequestDTO) {
         Ticket ticket = ticketMapper.mapDTOToTicket(ticketRequestDTO);
-        ticket.setUser(user);
-
         Ticket savedTicket = ticketRepository.save(ticket);
         return ticketMapper.mapTicketToDTO(savedTicket);
     }

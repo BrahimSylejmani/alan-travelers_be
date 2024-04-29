@@ -3,7 +3,7 @@ package org.alan.flightbooking.common.dto.ticket;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 public class TicketResponseDTO {
@@ -13,7 +13,7 @@ public class TicketResponseDTO {
     private String ticketClass;
     private BigDecimal ticketPrice;
     private String ticketStatus;
-    private LocalDateTime bookingDate;
+    private LocalDate bookingDate;
     private String passengerEmail;
     private String passengerPhoneNumber;
     private String paymentStatus;
