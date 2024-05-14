@@ -33,9 +33,18 @@ public class BaggageController {
         return ResponseEntity.ok(baggageService.findById(id));
     }
 
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Baggage> updateBaggage(@PathVariable Long id, @RequestBody Baggage baggage){
 
+        if(id == null || baggage == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(baggageService.update(id, baggage));
+    }
 
-
-
+    @DeleteMapping(path = "/{id}")
+    public void deleteBaggageById(@PathVariable Long id){
+        baggageService.delete(id);
+    }
 
 }
