@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/airport")
 public class AirportController {
@@ -26,6 +28,25 @@ public class AirportController {
     @GetMapping("/{id}")
     public ResponseEntity<Airport> findById(@PathVariable Long id){
         return ResponseEntity.ok(airportService.findById(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Airport>> getAllAirports(){
+        return ResponseEntity.ok(airportService.findAll());
+    }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Airport> updateAirport(@PathVariable Long id, @RequestBody Airport airport){
+
+        if(id == null || airport == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(airportService.update(id, airport));
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void deleteAirportById(@PathVariable Long id){
+        airportService.delete(id);
     }
 
 
