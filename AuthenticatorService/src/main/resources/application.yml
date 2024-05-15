@@ -1,12 +1,29 @@
-server.port=8085
+#spring.h2.console.enabled=true
+spring:
+  application:
+    name: flight-booking
+  datasource:
+    password: 123
+    url: jdbc:postgresql://localhost:5432/flight-booking
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+jwt:
+  secret: secret
+app:
+  jwttoken:
+    message: 'Login Successful'
+  controller:
+    exception:
+      message1: 'Id and Password Empty'
+      message2: 'Id and Password not found'
+      message3: 'Id and Password Invalid'
 
-spring.datasource.url=jdbc:h2:mem:userDB
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=password
-spring.h2.console.enabled=true
-jwt.secret=secret
-app.jwttoken.message='Login Successful'
-app.controller.exception.message1= 'Id and Password Empty'
-app.controller.exception.message2= 'Id and Password not found'
-app.controller.exception.message3= 'Id and Password Invalid'
+server:
+  port: 8085

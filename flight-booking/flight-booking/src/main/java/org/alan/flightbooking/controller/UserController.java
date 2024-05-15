@@ -1,5 +1,7 @@
 package org.alan.flightbooking.controller;
 
+import io.jsonwebtoken.Claims;
+import org.alan.flightbooking.filter.JwtFilter;
 import org.alan.flightbooking.model.User;
 import org.alan.flightbooking.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -47,7 +49,12 @@ public class UserController {
         userService.delete(id);
     }
 
-
+    @GetMapping("/api/v1/products")
+    public ResponseEntity<?> getUserProducts() {
+        Claims claims = JwtFilter.getUserClaims();
+        String userId = claims.getSubject();
+        return new ResponseEntity<>("Products for user: " + userId, HttpStatus.OK);
+    }
 
 
 }

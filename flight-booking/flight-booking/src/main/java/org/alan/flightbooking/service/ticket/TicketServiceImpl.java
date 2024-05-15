@@ -43,10 +43,10 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketResponseDTO createTicket(TicketRequestDTO ticketRequestDTO) {
+    public Ticket createTicket(TicketRequestDTO ticketRequestDTO, String userId) {
         Ticket ticket = ticketMapper.mapDTOToTicket(ticketRequestDTO);
-        Ticket savedTicket = ticketRepository.save(ticket);
-        return ticketMapper.mapTicketToDTO(savedTicket);
+        ticket.setUserId(userId);
+        return ticketRepository.save(ticket);
     }
     @Override
     public TicketResponseDTO updateTicket(Long id, TicketRequestDTO ticketRequestDTO) {

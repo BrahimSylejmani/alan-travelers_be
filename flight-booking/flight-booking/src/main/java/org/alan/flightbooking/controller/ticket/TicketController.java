@@ -1,6 +1,9 @@
 package org.alan.flightbooking.controller.ticket;
+import io.jsonwebtoken.Claims;
 import org.alan.flightbooking.common.dto.ticket.TicketRequestDTO;
 import org.alan.flightbooking.common.dto.ticket.TicketResponseDTO;
+import org.alan.flightbooking.filter.JwtFilter;
+import org.alan.flightbooking.model.Ticket;
 import org.alan.flightbooking.service.ticket.TicketService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tickets")
+@RequestMapping("api/v1/tickets")
 public class TicketController {
 
     private final TicketService ticketService;
@@ -21,8 +24,11 @@ public class TicketController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public TicketResponseDTO createTicket(@RequestBody TicketRequestDTO ticketRequestDTO) {
-        return ticketService.createTicket(ticketRequestDTO);
+    public ResponseEntity<Ticket> createTicket(@RequestBody TicketRequestDTO ticketRequestDTO) {
+        Claims claims = JwtFilter.getUserClaims();
+        String userId = claims.getSubject();
+        Ticket createdTicket = ticketService.createTicket(ticketRequestDTO, userId);
+        return new ResponseEntity<>(createdTicket, HttpStatus.CREATED);
     }
 
     @GetMapping

@@ -10,13 +10,17 @@
         <option value="$PROJECT_DIR$/car-booking/car-booking/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/AuthenticatorService/pom.xml" />
+        <option value="$PROJECT_DIR$/BlogService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/BlogService/pom.xml" />
         <option value="$PROJECT_DIR$/flight-booking/pom.xml" />
       </set>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="PWA">
     <option name="wasEnabledAtLeastOnce" value="true" />

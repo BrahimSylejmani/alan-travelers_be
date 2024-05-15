@@ -11,11 +11,17 @@
         <module name="flight-booking" />
         <module name="hotel-booking" />
         <module name="car-booking" />
+        <module name="AuthenticatorService" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BlogService" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthenticatorService" options="-parameters" />
+      <module name="BlogService" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="car-booking" options="-parameters" />
       <module name="flight-booking" options="-parameters" />
