@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
 @RestController
 @RequestMapping("api/v1/tickets")
 public class TicketController {

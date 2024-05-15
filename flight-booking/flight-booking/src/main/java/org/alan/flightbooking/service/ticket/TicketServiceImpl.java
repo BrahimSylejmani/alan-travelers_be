@@ -5,13 +5,10 @@ import org.alan.flightbooking.common.dto.ticket.TicketRequestDTO;
 import org.alan.flightbooking.common.dto.ticket.TicketResponseDTO;
 import org.alan.flightbooking.common.mapper.TicketMapper;
 import org.alan.flightbooking.model.Ticket;
-import org.alan.flightbooking.model.User;
 import org.alan.flightbooking.repository.TicketRepository;
-import org.alan.flightbooking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,9 +20,6 @@ public class TicketServiceImpl implements TicketService {
 
     @Autowired
     private TicketMapper ticketMapper;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Override
     public List<TicketResponseDTO> getAllTickets() {
