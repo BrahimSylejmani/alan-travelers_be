@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/car-booking/car-booking/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/review-svc/review-svc/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

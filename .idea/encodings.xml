@@ -10,5 +10,7 @@
     <file url="file://$PROJECT_DIR$/flight-booking/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hotel-booking/hotel-booking/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hotel-booking/hotel-booking/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/review-svc/review-svc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/review-svc/review-svc/src/main/resources" charset="UTF-8" />
   </component>
 </project>
