@@ -10,14 +10,11 @@
         <module name="api-gateway" />
         <module name="flight-booking" />
         <module name="hotel-booking" />
+        <module name="review-svc" />
         <module name="AuthenticatorService" />
         <module name="car-booking" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BlogService" target="11" />
-      <module name="review-svc" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -27,6 +24,7 @@
       <module name="car-booking" options="-parameters" />
       <module name="flight-booking" options="-parameters" />
       <module name="hotel-booking" options="-parameters" />
+      <module name="review-svc" options="-parameters" />
       <module name="review-svc" options="-parameters" />
     </option>
   </component>
