@@ -1,11 +1,9 @@
 package guru.springframework.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name="clients")
 public class User {
 
     @Id
