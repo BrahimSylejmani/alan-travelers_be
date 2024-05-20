@@ -1,7 +1,7 @@
 package org.alan.flightbooking.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,16 +18,15 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
+    @Column(name = "user_id", nullable = false)
+    private String userId;
+    
     private String passengerName;
     private String seatNumber;
     private String ticketClass;
     private BigDecimal ticketPrice;
     private String ticketStatus;
-    private LocalDateTime bookingDate;
+    private LocalDate bookingDate;
     private String passengerEmail;
     private String passengerPhoneNumber;
     private String paymentStatus;

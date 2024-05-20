@@ -5,13 +5,10 @@ import org.alan.flightbooking.common.dto.ticket.TicketRequestDTO;
 import org.alan.flightbooking.common.dto.ticket.TicketResponseDTO;
 import org.alan.flightbooking.common.mapper.TicketMapper;
 import org.alan.flightbooking.model.Ticket;
-import org.alan.flightbooking.model.User;
 import org.alan.flightbooking.repository.TicketRepository;
-import org.alan.flightbooking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,9 +20,6 @@ public class TicketServiceImpl implements TicketService {
 
     @Autowired
     private TicketMapper ticketMapper;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Override
     public List<TicketResponseDTO> getAllTickets() {
@@ -43,15 +37,10 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketResponseDTO createTicket(Long userId, TicketRequestDTO ticketRequestDTO) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + userId));
-
+    public Ticket createTicket(TicketRequestDTO ticketRequestDTO, String userId) {
         Ticket ticket = ticketMapper.mapDTOToTicket(ticketRequestDTO);
-        ticket.setUser(user);
-
-        Ticket savedTicket = ticketRepository.save(ticket);
-        return ticketMapper.mapTicketToDTO(savedTicket);
+        ticket.setUserId(userId);
+        return ticketRepository.save(ticket);
     }
     @Override
     public TicketResponseDTO updateTicket(Long id, TicketRequestDTO ticketRequestDTO) {

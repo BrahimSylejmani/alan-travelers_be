@@ -1,10 +1,11 @@
 package org.alan.flightbooking.common.dto.ticket;
 
 import lombok.Data;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.text.Format;
+import java.time.LocalDate;
 
 @Data
 public class TicketRequestDTO {
@@ -25,7 +26,8 @@ public class TicketRequestDTO {
     private String ticketStatus;
 
     @NotNull(message = "Booking date and time cannot be null")
-    private LocalDateTime bookingDate;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate bookingDate;
 
     @NotBlank(message = "Passenger email cannot be blank")
     private String passengerEmail;

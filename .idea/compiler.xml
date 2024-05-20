@@ -11,16 +11,20 @@
         <module name="flight-booking" />
         <module name="hotel-booking" />
         <module name="review-svc" />
+        <module name="AuthenticatorService" />
         <module name="car-booking" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthenticatorService" options="-parameters" />
+      <module name="BlogService" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="car-booking" options="-parameters" />
       <module name="flight-booking" options="-parameters" />
       <module name="hotel-booking" options="-parameters" />
+      <module name="review-svc" options="-parameters" />
       <module name="review-svc" options="-parameters" />
     </option>
   </component>
